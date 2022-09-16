@@ -19,6 +19,12 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
+
+    - name: Write secret to resource
+      env:
+        KEY: ${{ secrets.TOP_SECRET }}
+      run: echo $KEY > output/secret.txt
+
     - name: Build
       run: dotnet build --no-restore
     - name: Test
