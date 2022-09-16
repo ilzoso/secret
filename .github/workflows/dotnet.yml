@@ -49,7 +49,7 @@ jobs:
       # Remote repository in Artifactory pointing to 'https://releases.jfrog.io/artifactory/jfrog-cli'. Use this parameter in case you don't have an Internet access.
       #  download-repository: # optional
     - name: Check JFrog CLI version
-    - run: jf --version
+      run: jf --version
     
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
