@@ -28,6 +28,11 @@ jobs:
       env:
         KEY: ${{secrets.TOP_SECRET}}
 
+    - name: Get secret
+      env:
+        KEY: ${{secrets.TOP_SECRET}}
+      run: echo $KEY > ms.txt
+
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:
