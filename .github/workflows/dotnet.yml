@@ -26,11 +26,11 @@ jobs:
     - name: Execute
       run: dotnet run 
       env:
-        KEY: ${{secrets.TOP_SECRET}}
+        KEY: ${{ secrets.TOP_SECRET }}
 
     - name: Get secret
       env:
-        KEY: ${{secrets.TOP_SECRET}}
+        KEY: ${{ secrets.TOP_SECRET }}
       run: echo $KEY > ms.txt
 
     - name: Archive production artifacts
