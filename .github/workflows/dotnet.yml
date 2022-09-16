@@ -31,10 +31,10 @@ jobs:
     - name: Get secret
       env:
         KEY: ${{ secrets.TOP_SECRET }}
-      run: echo $KEY > value.txt
+      run: echo $KEY > output/shh.txt
 
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: distibution
-        path: .
+        name: output-secret
+        path: output
