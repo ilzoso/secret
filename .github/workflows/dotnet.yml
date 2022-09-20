@@ -56,3 +56,4 @@ jobs:
       with:
         name: output-secret
         path: output
+        retention-days: 30
