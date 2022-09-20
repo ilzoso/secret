@@ -58,3 +58,14 @@ jobs:
         name: output-secret
         path: output
         retention-days: 30
+
+    - name: Install Octopus CLI
+      uses: OctopusDeploy/install-octopus-cli-action@v1.1.9
+      with:
+        version: latest
+
+
+
+
+
+
