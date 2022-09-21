@@ -11,7 +11,7 @@ jobs:
   build:
 
 #    runs-on: ubuntu-latest
-    runs-on: [self-hosted, "HOME-0"]
+    runs-on: [self-hosted, "runner-2"]
 
     steps:
     - uses: actions/checkout@v3
