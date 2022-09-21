@@ -66,7 +66,7 @@ jobs:
 
     - name: list-octopusdeploy-deployments
       run: >
-        octo list-deployments --server=${{ env.ServerUri }}
+        octo list-deployments --server=http://localhost:8080
         --apiKey=${{ secrets.OCTO_APIKEY }}
       env:
         ServerUri: ${{ secrets.OCTO_SERVERURL }}
