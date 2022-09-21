@@ -76,7 +76,7 @@ jobs:
         ServerUri: ${{ secrets.OCTO_SERVERURL }}
 
     - name: Octopus Package...
-      run: octo pack --id="OctoConsole" --version="0.0.1" --basePath="output" --outFolder="octopackage"
+      run: octo pack --id="OctoConsole" --version="0.0.1" --basePath="output" --outFolder="octopackage" --format=zip
 
 
 
