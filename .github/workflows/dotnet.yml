@@ -42,7 +42,7 @@ jobs:
       run: echo $KEY > output/shh.txt
 
     - name: Publish
-      run: dotnet publish secret.csproj -p:PublishProfile=Development --no-restore --output output --verbosity detailed
+      run: dotnet publish secret.csproj -p:PublishProfile=Development --no-restore --output output
 
     - name: Setup JFrog CLI
     # You may pin to the exact commit or the version.
