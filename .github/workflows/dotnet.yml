@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-job:
 
 #    runs-on: ubuntu-latest
     runs-on: [self-hosted, runner-2]
@@ -86,8 +86,17 @@ jobs:
         path: octopackage
         retention-days: 5
 
-  test:
+  run-tests:
+    needs: build-job
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Octopus Package
+        uses: actions/download-artifact@v3
+        with:
+          name: zip-package
+
+
     services:
       sqlserver:
         image: mcr.microsoft.com/mssql/server:2019-latest
