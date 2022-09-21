@@ -78,6 +78,13 @@ jobs:
     - name: Octopus Package...
       run: octo pack --id="OctoConsole" --version="0.0.1" --basePath="output" --outFolder="octopackage" --format=zip
 
+    - name: Archive Octopus Package
+      uses: actions/upload-artifact@v3
+      with:
+        name: zip-package
+        path: octopackage
+        retention-days: 5
+
 
 
 
