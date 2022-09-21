@@ -86,6 +86,16 @@ jobs:
         path: octopackage
         retention-days: 5
 
+  test:
+    runs-on: ubuntu-latest
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        env:
+          SA_PASSWORD: Pa$$w0rd
+          ACCEPT_EULA: Y
+        ports:
+          - "1433:1433"
 
 
 
