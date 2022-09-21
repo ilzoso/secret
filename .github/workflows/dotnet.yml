@@ -11,7 +11,7 @@ jobs:
   build:
 
 #    runs-on: ubuntu-latest
-    runs-on: [self-hosted, "runner-2"]
+    runs-on: [self-hosted, runner-2]
 
     steps:
     - uses: actions/checkout@v3
@@ -40,6 +40,9 @@ jobs:
       env:
         KEY: ${{ secrets.TOP_SECRET }}
       run: echo $KEY > output/shh.txt
+
+    - name: Publish
+      run: dotnet publish secret.csproj -p:PublishProfile=Development --no-restore --output output --verbosity detailed
 
     - name: Setup JFrog CLI
     # You may pin to the exact commit or the version.
@@ -72,6 +75,8 @@ jobs:
       env:
         ServerUri: ${{ secrets.OCTO_SERVERURL }}
 
+    - name: Octopus Package...
+      run: dotnet octo pack --id="OctoConsole" --version="0.0.1" --basePath="output" --outFolder="octopackage"
 
 
 
