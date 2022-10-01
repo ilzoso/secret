@@ -56,7 +56,7 @@ jobs:
       #  download-repository: # optional
     - name: Check JFrog CLI version
       run: jf --version
-    
+
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -95,7 +95,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: zip-package
-
 
     services:
       sqlserver:
